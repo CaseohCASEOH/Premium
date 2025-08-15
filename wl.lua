@@ -32,7 +32,7 @@ run = false
 local f,d="wl.key",(gethwid():gsub(".",function(c)return("%02x"):format(c:byte())end))
 if not isfile(f) then writefile(f,d)
 elseif readfile(f)~=d then game.Players.LocalPlayer:Kick("Error 243") writefile(f,d) end
-if not({["65373932636264616534386639636138373637323034346638633434336434656435646533623835316430313935303032616235643133656466353434396366"]=true, ["36663130366239303934366437666364"]=true})[readfile(f)] then game.Players.LocalPlayer:Kick("Error 233") end
+if not({["65373932636264616534386639636138373637323034346638633434336434656435646533623835316430313935303032616235643133656466353434396366"]=true})[readfile(f)] then game.Players.LocalPlayer:Kick("Error 233") end
 local wl = { [f] = true }
 
 if not wl[f] then
@@ -45,7 +45,10 @@ end
 
 text.Text = "Verified"
 game:GetService("TweenService"):Create(text, TweenInfo.new(1.5), {TextColor3=Color3.fromRGB(100,200,255)}):Play()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/CaseohCASEOH/Premium/refs/heads/main/premium2.lua'))()
+task.wait(2)
+game:GetService("TweenService"):Create(dark, TweenInfo.new(2.5), {BackgroundTransparency=1}):Play()
+game:GetService("TweenService"):Create(game.Workspace.CurrentCamera, TweenInfo.new(2.5), {FieldOfView=70}):Play()
+game:GetService("TweenService"):Create(blur, TweenInfo.new(2.5), {Size=0}):Play()
 task.wait(2.5)
 gui:Destroy()
 blur:Destroy()
