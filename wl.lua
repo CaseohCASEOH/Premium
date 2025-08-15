@@ -22,7 +22,7 @@ task.spawn(function()
 	while run do
 		local t = tick()*2
 		text.TextColor3 = Color3.fromRGB((math.sin(t)*0.5+0.5)*255,0,(math.cos(t)*0.5+0.5)*255)
-		task.wait(0.1)
+		task.wait(0)
 	end
 end)
 
